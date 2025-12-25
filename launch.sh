@@ -53,13 +53,13 @@ if [ ! -d "venv" ]; then
     echo "Creating virtual environment..."
     python3 -m venv venv
 fi
-source venv/bin/activate
+
 echo "Installing backend dependencies..."
-pip install -r requirements.txt
+./venv/bin/pip install -r requirements.txt
 
 echo "Starting Backend..."
 # Run in background and save PID
-python app.py &
+./venv/bin/python3 app.py &
 BACKEND_PID=$!
 cd ..
 
